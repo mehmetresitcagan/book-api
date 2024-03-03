@@ -5,17 +5,37 @@ https://www.youtube.com/watch?v=5rNk7m_zlAg&list=WL&index=4
 0. Spring is an open source framework for building enterprise Java applications
 
 1. Spring core features:
-   - IOC(inversion on control container)
+   - IOC(inversion on control container) -> logging, cacning, transaction management, authentication
    - AOP(aspect oriented programming)
-   - Data Access Framework
-1. Spring initializr
+   - Data Access Framework -> jdbc, hibernate, jpa
+   - mvc
+  
 
-   - https://start.spring.io/
-   - maven seçildi
-   - jar packaging seçildi
+2. Spring beans
+   - beans refers to an object that is managed by spring
+
+3. Spring components
+   - **@Component** as a general component annotation indicating that the class should be initialized, configured and managed by the core  container.
+   - **@Repository**, **@Service** and **@Controller** for **@Component** that allow to further re-fine components.
+
+4. Bean naming
+   - **@Bean("initialize")**: bean name i initialize olur.
+   - **@Bean()** : bean name i method name i ne ise o olur.
+
+5. Dependency Injection
+   - Constructor injection
+   - Field injection
+   - Configuration methods
+   - Setter methods injection
+ 
+
+6. Spring initializr
+- https://start.spring.io/
+- maven seçildi
+- jar packaging seçildi
 
 1. Dependencies
 
-   - spring web -> build web, mvc, restful apis
+- spring web -> build web, mvc, restful apis
 
-1. Artifact id -> proje id
+4. Artifact id -> proje id
