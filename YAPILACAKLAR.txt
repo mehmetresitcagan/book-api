@@ -4,3 +4,9 @@
 -farklı kurslar var -> https://pupilica.com/#
 
 
+- çok güzel kaynak, baştan sonra incele -> https://academy.patika.dev/paths/ileri-seviye-java-ile-backend-web-development-patikasi
+
+
+- mikroservis mimarisi nedir -> https://academy.patika.dev/courses/microservices
+
+
