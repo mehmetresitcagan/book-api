@@ -63,3 +63,8 @@ https://www.youtube.com/watch?v=5rNk7m_zlAg&list=WL&index=4
 13. unit test, integration test, end to end test places in test folder.
 14. pom.xml -> has info of metadata, properties of application, dependencies
 15. maven -> it helps programmers manage their projects and all the things they need to build their programs.
+16. spring vs spring boot -> spring boot, spring in üzerine yerleştirilmiş bir katmandır. spring boot bizim için çok fazla hazır konfigürasyona sahip. böylece spring boot ile daha hızlı application üretebiliyoruz. spring boot makes spring easier to use.
+17. spring application layers:
+    - persistence layer is to handle with database (model)
+    - service layer's goal is to use all the fuctionality exposed by persistence layer (service)
+    - presentation layer (view)
