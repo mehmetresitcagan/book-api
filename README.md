@@ -65,6 +65,16 @@ https://www.youtube.com/watch?v=5rNk7m_zlAg&list=WL&index=4
 15. maven -> it helps programmers manage their projects and all the things they need to build their programs.
 16. spring vs spring boot -> spring boot, spring in üzerine yerleştirilmiş bir katmandır. spring boot bizim için çok fazla hazır konfigürasyona sahip. böylece spring boot ile daha hızlı application üretebiliyoruz. spring boot makes spring easier to use.
 17. spring application layers:
+
     - persistence layer is to handle with database (model)
     - service layer's goal is to use all the fuctionality exposed by persistence layer (service)
     - presentation layer (view)
+
+18. @Configuration component scanning phase inde bean leri arar.
+19. Spring boot, springden farklı olarak default ayarları vardır. Bunu @EnableAutoConfiguration ile yapar.
+20. JDBC -> (java database connectivity) interact with database by using sql queries. low level.
+21. JPA -> (Java persistence API) interact with database by using java object. high level. actual implementation is called hibernate.
+22. hibernate referred to orm. object relational mapper
+23. database driver is to interact with a specific database. jdbc is to how to connect to database and query it using sql. jpa is how you would query database using java objects.
+24. H2 -> in-memory database dependency.
+25. Dao -> data access object
