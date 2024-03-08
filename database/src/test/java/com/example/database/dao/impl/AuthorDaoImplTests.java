@@ -29,7 +29,7 @@ public class AuthorDaoImplTests {
 
         verify(jdbcTemplate).update(
                 eq("INSERT INTO authors (id, name, age) VALUES (?, ?, ?)"),
-                eq(1L), eq("MRÇ"), eq(80)
+                eq(1L), eq("XYZ"), eq(30)
         );
     }
 
@@ -40,6 +40,27 @@ public class AuthorDaoImplTests {
                 eq("SELECT * FROM authors WHERE id = ? LIMIT 1"),
                 ArgumentMatchers.<AuthorDaoImpl.AuthorRowMapper>any(),
                 eq(1L));
+    }
+
+    @Test
+    public void testThatFindManyGeneratesCorrectSql() {
+        underTest.find();
+        verify(jdbcTemplate).query(
+                eq("SELECT * FROM authors"),
+                ArgumentMatchers.<AuthorDaoImpl.AuthorRowMapper>any()
+        );
+    }
+
+    @Test
+    public void testThatUpdateGeneratesCorrectSql() {
+        Author author = TestDataUtil.createAuthorTest();
+        underTest.update(1L, author);
+
+        verify(jdbcTemplate)
+                .update(
+                        "UPDATE authors SET id = ?, name = ?, age = ? WHERE id = ?",
+                        1L, "XYZ", 30, 1L
+                );
     }
 
 

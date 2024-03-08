@@ -35,11 +35,32 @@ public class BookDaoImplTests {
 
     @Test
     public void testThatFindOneGeneratesCorrectSql() {
-        underTest.find("abc");
+        underTest.findOne("abc");
         verify(jdbcTemplate).query(
                 eq("SELECT * FROM books WHERE isbn = ? LIMIT 1"),
                 ArgumentMatchers.<BookDaoImpl.BookRowMapper>any(),
                 eq("abc"));
+    }
+
+    @Test
+    public void testThatFindManyGeneratesCorrectSql() {
+        underTest.find();
+        verify(jdbcTemplate).query(
+                eq("SELECT * FROM books"),
+                ArgumentMatchers.<BookDaoImpl.BookRowMapper>any()
+        );
+    }
+
+    @Test
+    public void testThatUpdateGeneratesCorrectSql() {
+        Book book = TestDataUtil.createBookTest();
+        underTest.update("abc", book);
+
+        verify(jdbcTemplate)
+                .update(
+                        "UPDATE books SET isbn = ?, title = ?, author_id = ? WHERE isbn = ?",
+                        "abc", "doe", 1L, "abc"
+                );
     }
 
 
