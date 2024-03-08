@@ -78,3 +78,4 @@ https://www.youtube.com/watch?v=5rNk7m_zlAg&list=WL&index=4
 23. database driver is to interact with a specific database. jdbc is to how to connect to database and query it using sql. jpa is how you would query database using java objects.
 24. H2 -> in-memory database dependency.
 25. Dao -> data access object
+26. Unit test, bir yazılımın en küçük parçalarını (fonksiyon, metod) izole bir şekilde test ederken, integration test ise farklı bileşenlerin bir araya geldiğinde doğru çalıştığını kontrol eder.
