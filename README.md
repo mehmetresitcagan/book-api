@@ -84,3 +84,4 @@ https://www.youtube.com/watch?v=5rNk7m_zlAg&list=WL&index=4
 29. JPA methodları:
    - save() -> obje create etmek için.
    - findById()
+   - findAll() -> Iterable<> türünde obje döner
