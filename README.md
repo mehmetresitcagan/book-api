@@ -79,3 +79,8 @@ https://www.youtube.com/watch?v=5rNk7m_zlAg&list=WL&index=4
 24. H2 -> in-memory database dependency.
 25. Dao -> data access object
 26. Unit test, bir yazılımın en küçük parçalarını (fonksiyon, metod) izole bir şekilde test ederken, integration test ise farklı bileşenlerin bir araya geldiğinde doğru çalıştığını kontrol eder.
+27. jdbc kullanırken sql sorguları yazılıyor. çok fazla iş yükü oluyor.
+28. Hibernate Auto dll -> Entity tablelarının otomatik olarak database de oluşmasını sağlıyor.
+29. JPA methodları:
+   - save() -> obje create etmek için.
+   - findById()
