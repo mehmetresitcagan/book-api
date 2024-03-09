@@ -18,12 +18,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 @ExtendWith(SpringExtension.class)
 // Her test execute edildikten sonra database i temizliyor. böylece önceki tesste oluşturulan objelerden dolayı fail olmuyor
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
-public class AuthorTepositoryIntegrationTest {
+public class AuthorRepositoryIntegrationTest {
 
     private AuthorRepository underTest;
 
     @Autowired
-    public AuthorTepositoryIntegrationTest(AuthorRepository underTest) {
+    public AuthorRepositoryIntegrationTest(AuthorRepository underTest) {
         this.underTest = underTest;
     }
 
@@ -51,18 +51,18 @@ public class AuthorTepositoryIntegrationTest {
                 .containsExactly(author, authorA, authorB);
     }
 
-//    @Test
-//    public void testThatAuthorCanBeUpdated() {
-//        Author author = TestDataUtil.createAuthorTest();
-//        underTest.create(author);
-//        author.setName("UPDATED");
-//        underTest.update(author.getId(), author);
-//        Optional<Author> result = underTest.findOne(author.getId());
-//        assertThat(result).isPresent();
-//        assertThat(result.get()).isEqualTo(author);
-//
-//    }
-//
+    @Test
+    public void testThatAuthorCanBeUpdated() {
+        Author author = TestDataUtil.createAuthorTest();
+        underTest.save(author);
+        author.setName("UPDATED");
+        underTest.save(author);
+        Optional<Author> result = underTest.findById(author.getId());
+        assertThat(result).isPresent();
+        assertThat(result.get()).isEqualTo(author);
+
+    }
+
 //    @Test
 //    public void testThatAuthorCanBeDeleted() {
 //        Author author = TestDataUtil.createAuthorTest();
