@@ -63,14 +63,14 @@ public class AuthorRepositoryIntegrationTest {
 
     }
 
-//    @Test
-//    public void testThatAuthorCanBeDeleted() {
-//        Author author = TestDataUtil.createAuthorTest();
-//        underTest.create(author);
-//
-//        underTest.delete(author.getId());
-//        Optional<Author> result = underTest.findOne(author.getId());
-//        assertThat(result).isEmpty();
-//    }
+    @Test
+    public void testThatAuthorCanBeDeleted() {
+        Author author = TestDataUtil.createAuthorTest();
+        underTest.save(author);
+
+        underTest.deleteById(author.getId());
+        Optional<Author> result = underTest.findById(author.getId());
+        assertThat(result).isEmpty();
+    }
 
 }
