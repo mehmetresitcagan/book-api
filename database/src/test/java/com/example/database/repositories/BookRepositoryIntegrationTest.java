@@ -1,8 +1,8 @@
 package com.example.database.repository;
 
 import com.example.database.TestDataUtil;
-import com.example.database.domain.Author;
-import com.example.database.domain.Book;
+import com.example.database.domain.entities.Author;
+import com.example.database.domain.entities.Book;
 import com.example.database.repositories.BookRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

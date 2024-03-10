@@ -1,6 +1,6 @@
 package com.example.database.repositories;
 
-import com.example.database.domain.Book;
+import com.example.database.domain.entities.Book;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

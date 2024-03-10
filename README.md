@@ -82,6 +82,9 @@ https://www.youtube.com/watch?v=5rNk7m_zlAg&list=WL&index=4
 27. jdbc kullanırken sql sorguları yazılıyor. çok fazla iş yükü oluyor.
 28. Hibernate Auto dll -> Entity tablelarının otomatik olarak database de oluşmasını sağlıyor.
 29. JPA methodları:
-   - save() -> obje create etmek için.
-   - findById()
-   - findAll() -> Iterable<> türünde obje döner
+    - save() -> obje create etmek için.
+    - findById()
+    - findAll() -> Iterable<> türünde obje döner
+30. @Autowired ile constructor injection arasındaki fark nedir?
+31. Neden DTO kullanıyoruz ?!
+32. Basic http status kodlarına bakıp buraya yaz.
