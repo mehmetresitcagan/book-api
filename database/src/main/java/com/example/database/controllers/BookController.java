@@ -6,12 +6,10 @@ import com.example.database.mappers.Mapper;
 import com.example.database.services.BookService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class BookController {
-
 
     private BookService service;
     private Mapper<Book, BookDto> bookMapper;
@@ -22,11 +20,17 @@ public class BookController {
         this.bookMapper = bookMapper;
     }
 
-    @PostMapping(path = "/books")
-    public ResponseEntity<BookDto> createBook(BookDto bookDto){
+    @PutMapping(path = "/books/{isbn}")
+    public ResponseEntity<BookDto> createBook(
+            @PathVariable("isbn") String isbn,
+            @RequestBody BookDto bookDto){
+
         Book bookEntity = bookMapper.mapFrom(bookDto);
-        Book savedBook = service.createBook(bookEntity);
-        return new ResponseEntity<>(bookMapper.mapTo(savedBook), HttpStatus.CREATED);
+        Book savedBook = service.createBook(bookEntity, isbn);
+        BookDto savedBookDto = bookMapper.mapTo(savedBook);
+        return new ResponseEntity<>(savedBookDto, HttpStatus.CREATED);
     }
+
+
 
 }

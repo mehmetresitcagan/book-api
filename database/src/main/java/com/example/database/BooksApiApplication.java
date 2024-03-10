@@ -8,13 +8,13 @@ import lombok.extern.java.Log;
 
 @Log
 @SpringBootApplication
-public class DatabaseApplication {
+public class BooksApiApplication {
 	// application.properties dosyasındda database bağlantı konfigürasyonları var.
 	// docker bağlamak için docker-compose.yml dosyası oluşturduktan sonra docker-compose up komutu çalıştırıldı.
 
 
 	public static void main(String[] args) {
-		SpringApplication.run(DatabaseApplication.class, args);
+		SpringApplication.run(BooksApiApplication.class, args);
 	}
 
 

@@ -4,5 +4,5 @@ import com.example.database.domain.entities.Book;
 
 public interface BookService {
 
-    Book createBook(Book book);
+    Book createBook(Book book, String isbn);
 }
