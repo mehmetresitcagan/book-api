@@ -5,6 +5,10 @@ import com.example.database.repositories.BookRepository;
 import com.example.database.services.BookService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
+
 @Service
 public class BookServiceImpl implements BookService {
 
@@ -18,5 +22,12 @@ public class BookServiceImpl implements BookService {
     public Book createBook(Book book, String isbn) {
         book.setIsbn(isbn);
         return repository.save(book);
+    }
+
+    @Override
+    public List<Book> findAll() {
+        return StreamSupport
+                .stream(repository.findAll().spliterator(), false)
+                .collect(Collectors.toList());
     }
 }

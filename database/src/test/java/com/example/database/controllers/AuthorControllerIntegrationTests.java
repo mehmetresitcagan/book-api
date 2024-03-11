@@ -85,7 +85,7 @@ public class AuthorControllerIntegrationTests {
         authorTest.setId(null);
         service.createAuthor(authorTest);
         mockMvc.perform(
-                MockMvcRequestBuildersf
+                MockMvcRequestBuilders
                         .get("/authors")
                         .contentType(MediaType.APPLICATION_JSON)
         ).andExpect(
