@@ -6,6 +6,7 @@ import com.example.database.services.AuthorService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
@@ -30,4 +31,11 @@ public class AuthorServiceImpl implements AuthorService {
                 .stream(repository.findAll().spliterator(), false)
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public Optional<Author> findById(long id) {
+        return repository.findById(id);
+    }
+
+
 }
