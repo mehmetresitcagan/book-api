@@ -83,7 +83,7 @@ public class AuthorControllerIntegrationTests {
     public void testThatListAuthorsReturnsListOfAuthors() throws Exception{
         Author authorTest = TestDataUtil.createAuthorTest();
         authorTest.setId(null);
-        service.createAuthor(authorTest);
+        service.save(authorTest);
         mockMvc.perform(
                 MockMvcRequestBuilders
                         .get("/authors")
@@ -101,7 +101,7 @@ public class AuthorControllerIntegrationTests {
     public void testThatFindOneAuthorReturnsHttpStatus200() throws Exception{
         Author authorTest = TestDataUtil.createAuthorTest();
         authorTest.setId(null);
-        service.createAuthor(authorTest);
+        service.save(authorTest);
         mockMvc.perform(
                 MockMvcRequestBuilders
                         .get("/authors/1")
@@ -126,7 +126,7 @@ public class AuthorControllerIntegrationTests {
     public void testThatFindOneAuthorReturnsAuthorWhenAuthorExists() throws Exception{
         Author authorTest = TestDataUtil.createAuthorTest();
         authorTest.setId(null);
-        service.createAuthor(authorTest);
+        service.save(authorTest);
         mockMvc.perform(
                 MockMvcRequestBuilders
                         .get("/authors/1")

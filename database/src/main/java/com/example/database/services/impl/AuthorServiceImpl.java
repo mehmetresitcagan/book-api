@@ -21,7 +21,7 @@ public class AuthorServiceImpl implements AuthorService {
     }
 
     @Override
-    public Author createAuthor(Author author) {
+    public Author save(Author author) {
         return repository.save(author);
     }
 
@@ -35,6 +35,11 @@ public class AuthorServiceImpl implements AuthorService {
     @Override
     public Optional<Author> findById(long id) {
         return repository.findById(id);
+    }
+
+    @Override
+    public boolean isExists(Long id) {
+        return repository.existsById(id);
     }
 
 

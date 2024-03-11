@@ -31,7 +31,7 @@ public class BookController {
             @RequestBody BookDto bookDto){
 
         Book bookEntity = bookMapper.mapFrom(bookDto);
-        Book savedBook = service.createBook(bookEntity, isbn);
+        Book savedBook = service.save(bookEntity, isbn);
         BookDto savedBookDto = bookMapper.mapTo(savedBook);
         return new ResponseEntity<>(savedBookDto, HttpStatus.CREATED);
     }

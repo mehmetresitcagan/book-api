@@ -7,9 +7,11 @@ import java.util.Optional;
 
 public interface BookService {
 
-    Book createBook(Book book, String isbn);
+    Book save(Book book, String isbn);
 
     List<Book> findAll();
 
     Optional<Book> findByIsbn(String isbn);
+
+    boolean isExists(String isbn);
 }

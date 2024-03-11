@@ -2,7 +2,6 @@ package com.example.database.controllers;
 
 import com.example.database.TestDataUtil;
 import com.example.database.domain.dto.BookDto;
-import com.example.database.domain.entities.Author;
 import com.example.database.domain.entities.Book;
 import com.example.database.services.BookService;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -83,7 +82,7 @@ public class BookControllerIntegrationTests {
     @Test
     public void testThatListBooksReturnsListOfBooks() throws Exception{
         Book bookTest = TestDataUtil.createBookTest(null);
-        service.createBook(bookTest, "deneme");
+        service.save(bookTest, "deneme");
         mockMvc.perform(
                 MockMvcRequestBuilders
                         .get("/books")
@@ -98,7 +97,7 @@ public class BookControllerIntegrationTests {
     @Test
     public void testThatFindOneBookReturnsHttpStatus200() throws Exception{
         Book bookTest = TestDataUtil.createBookTest(null);
-        service.createBook(bookTest, "1");
+        service.save(bookTest, "1");
         mockMvc.perform(
                 MockMvcRequestBuilders
                         .get("/books/1")
@@ -122,7 +121,7 @@ public class BookControllerIntegrationTests {
     @Test
     public void testThatFindOneBookReturnsBookWhenBookExists() throws Exception{
         Book bookTest = TestDataUtil.createBookTest(null);
-        service.createBook(bookTest, "1");
+        service.save(bookTest, "1");
         mockMvc.perform(
                 MockMvcRequestBuilders
                         .get("/books/1")
