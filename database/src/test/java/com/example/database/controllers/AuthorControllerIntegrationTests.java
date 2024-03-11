@@ -2,6 +2,7 @@ package com.example.database.controllers;
 
 import com.example.database.TestDataUtil;
 import com.example.database.domain.entities.Author;
+import com.example.database.services.AuthorService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -21,14 +22,16 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 @AutoConfigureMockMvc
 public class AuthorControllerIntegrationTests {
 
+    private AuthorService service;
     private MockMvc mockMvc;
 
     private ObjectMapper objectMapper;
 
     @Autowired
-    public AuthorControllerIntegrationTests(MockMvc mockMvc) {
+    public AuthorControllerIntegrationTests(MockMvc mockMvc, AuthorService service) {
         this.mockMvc = mockMvc;
         this.objectMapper = new ObjectMapper();
+        this.service = service;
     }
 
     @Test
@@ -62,6 +65,35 @@ public class AuthorControllerIntegrationTests {
                 MockMvcResultMatchers.jsonPath("$.name").value("XYZ")
         ).andExpect(
                 MockMvcResultMatchers.jsonPath("$.age").value(30)
+        );
+    }
+
+    @Test
+    public void testThatListAuthorsReturnsHttpStatus200() throws Exception{
+        mockMvc.perform(
+                MockMvcRequestBuilders
+                        .get("/authors")
+                        .contentType(MediaType.APPLICATION_JSON)
+        ).andExpect(
+                MockMvcResultMatchers.status().isOk()
+        );
+    }
+
+    @Test
+    public void testThatListAuthorsReturnsListOfAuthors() throws Exception{
+        Author authorTest = TestDataUtil.createAuthorTest();
+        authorTest.setId(null);
+        service.createAuthor(authorTest);
+        mockMvc.perform(
+                MockMvcRequestBuildersf
+                        .get("/authors")
+                        .contentType(MediaType.APPLICATION_JSON)
+        ).andExpect(
+                MockMvcResultMatchers.jsonPath("$[0].id").isNumber()
+        ).andExpect(
+                MockMvcResultMatchers.jsonPath("$[0].name").value("XYZ")
+        ).andExpect(
+                MockMvcResultMatchers.jsonPath("$[0].age").value(30)
         );
     }
 
