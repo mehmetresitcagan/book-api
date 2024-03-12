@@ -22,7 +22,7 @@ To run the project on your local machine, follow the steps below.
 2. Build the project:
 
     ```bash
-    mvn clean install
+    ./mvnw clean install
     ```
 
 3. Run the application:
