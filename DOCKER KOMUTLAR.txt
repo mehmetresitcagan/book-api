@@ -1,4 +1,0 @@
-docker ps -> çalışan containerları gösteriyor
-
-
-docker-compose up -> container ı çalıştırıyor
