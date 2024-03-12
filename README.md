@@ -1,4 +1,4 @@
-# Spring Boot Book and Author API
+# Spring Book API
 
 This simple Spring Boot project provides a basic API for performing CRUD (Create, Read, Update, Delete) operations on books and authors.
 
@@ -8,7 +8,7 @@ To run the project on your local machine, follow the steps below.
 
 ### Prerequisites
 
-- Java JDK 8 or higher
+- Java JDK 21
 - Maven
 
 ### Installation
@@ -16,7 +16,7 @@ To run the project on your local machine, follow the steps below.
 1. Navigate to the project directory:
 
     ```bash
-    cd spring-boot-book-author-api
+    cd book-api-main
     ```
 
 2. Build the project:
@@ -28,7 +28,7 @@ To run the project on your local machine, follow the steps below.
 3. Run the application:
 
     ```bash
-    java -jar target/book-author-api-1.0.jar
+    java -jar target/database-0.0.1-SNAPSHOT.jar
     ```
 
 The application will run by default at `http://localhost:8080`.
@@ -103,6 +103,3 @@ Deletes a specific author.
 4. Synchronize your branch with the main repository: `git push origin my-feature-branch`
 5. Create a Pull Request.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
