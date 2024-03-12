@@ -60,7 +60,7 @@ https://www.youtube.com/watch?v=5rNk7m_zlAg&list=WL&index=4
 11. ui files places in resources/static folder
 
 12. application.properties file
-13. unit test, integration test, end to end test places in test folder.
+13. unit test, integration test, end-to-end test places in test folder.
 14. pom.xml -> has info of metadata, properties of application, dependencies
 15. maven -> it helps programmers manage their projects and all the things they need to build their programs.
 16. spring vs spring boot -> spring boot, spring in üzerine yerleştirilmiş bir katmandır. spring boot bizim için çok fazla hazır konfigürasyona sahip. böylece spring boot ile daha hızlı application üretebiliyoruz. spring boot makes spring easier to use.
@@ -88,3 +88,4 @@ https://www.youtube.com/watch?v=5rNk7m_zlAg&list=WL&index=4
 30. @Autowired ile constructor injection arasındaki fark nedir?
 31. Neden DTO kullanıyoruz ?!
 32. Basic http status kodlarına bakıp buraya yaz.
+33. Pagination -> getAll fonksiyonlarında çok fazla obje döneceği için database ve app serverlarında crash yaşanabilir. Bunu önlemek için bir yöntem.

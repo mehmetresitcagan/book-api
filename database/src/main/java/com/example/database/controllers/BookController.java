@@ -8,6 +8,10 @@ import com.example.database.services.BookService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
+
 
 import java.util.List;
 import java.util.Optional;
@@ -37,11 +41,9 @@ public class BookController {
     }
 
     @GetMapping(path = "/books")
-    public List<BookDto> listBooks(){
-        List<Book> books = service.findAll();
-        return books.stream()
-                .map(bookMapper::mapTo)
-                .collect(Collectors.toList());
+    public Page<BookDto> listBooks(Pageable pageable){
+        Page<Book> books = service.findAll(pageable);
+        return books.map(bookMapper::mapTo);
     }
 
     @GetMapping(path = "/books/{isbn}")
